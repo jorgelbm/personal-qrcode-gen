@@ -41,10 +41,13 @@ const FormularioButton = styled.button`
 const FormularioButtonCancel = styled(FormularioButton)`
     background-color: #E6AF2E;
 `
-export default function Form(){
+export default function Form(props){
     const { register, formState: { errors }, handleSubmit, resetField } = useForm();
-    const onSubmit = data => console.log(data);
 
+    const onSubmit = (data) => {
+        const newQrCodeData = `Nome: ${data.name}\nEmail: ${data.email}\nTwitter: ${data.twitter}\nGithub: ${data.github}`
+        props.setQrCodeValue(newQrCodeData)
+    }
     const handleCancel = () => {
         resetField("name")
         resetField("email")
