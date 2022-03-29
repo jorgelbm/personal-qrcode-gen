@@ -4,8 +4,8 @@ import styled from "styled-components"
 const Formulario = styled.form`
     display: flex;
     flex-direction: column;
-    background-color: #E0E2DB;
-    padding: 2em;
+    background-color: none;
+    width: 100%;
 `
 const FormularioLabel = styled.label`
     font-weight: bold;
@@ -15,12 +15,12 @@ const FormularioInput = styled.input`
     color: #191716;
     background-color: #FFFFFF;
     width: 100%;
-    max-width: 300px;
     border: 1px solid #191716;
     border-radius: 3px;
     padding: 0.5em 0.75em;
     outline: none;
     margin-bottom: 1em;
+    box-sizing: border-box;
 `
 const FormularioErrors = styled.p`
     color: #3D348B;
@@ -29,6 +29,7 @@ const FormularioErrors = styled.p`
 `
 const FormularioButtonsDiv = styled.div`
     display: flex;
+    justify-content: space-between;
 `
 const FormularioButton = styled.button`
     cursor: pointer;
@@ -67,8 +68,8 @@ export default function Form(props){
             <FormularioLabel>Github</FormularioLabel>
             <FormularioInput {...register("github")}/>
             <FormularioButtonsDiv>
-                <FormularioButton type="submit">Create QR Code</FormularioButton>
                 <FormularioButtonCancel onClick={handleCancel}>Cancel</FormularioButtonCancel>
+                <FormularioButton type="submit">Create QR Code</FormularioButton> 
             </FormularioButtonsDiv>
         </Formulario>
     )
