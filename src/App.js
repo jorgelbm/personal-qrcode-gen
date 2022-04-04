@@ -16,6 +16,11 @@ const Wrapper = styled.div`
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
+  @media screen and (max-width: 768px){
+    height: fit-content;
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
 `
 const MainContent = styled.main`
   margin: 0 auto;
