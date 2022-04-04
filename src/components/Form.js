@@ -9,38 +9,52 @@ const Formulario = styled.form`
 `
 const FormularioLabel = styled.label`
     font-weight: bold;
-    color: #191716;
+    color: #01013D;
+    margin-top: 0.55em;
 `
 const FormularioInput = styled.input`
-    color: #191716;
+    color: #01013D;
     background-color: #FFFFFF;
     width: 100%;
-    border: 1px solid #191716;
+    border: 1px solid #01013D;
     border-radius: 3px;
     padding: 0.5em 0.75em;
     outline: none;
-    margin-bottom: 1em;
+    margin-bottom: 0.25em;
     box-sizing: border-box;
 `
 const FormularioErrors = styled.p`
-    color: #3D348B;
+    color: #D90429;
     margin: 0;
     padding: 0;
 `
 const FormularioButtonsDiv = styled.div`
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    margin-top: 0.75em;
 `
 const FormularioButton = styled.button`
     cursor: pointer;
-    background-color: #3D348B;
-    border: none;
+    color: #FFFFFF;
+    background-color: #01013D;
+    border: 1px solid #01013D;
     width: fit-content;
     padding: 0.5em 1em;
+    margin: 0 0 0 0.45em;
     border-radius: 15px;
+    &:hover{
+        border-color: #38B000;
+        background-color: #38B000;
+    }
 `
 const FormularioButtonCancel = styled(FormularioButton)`
-    background-color: #E6AF2E;
+    color: #01013D;
+    background-color: #FFFFFF;
+    border: 1px solid #01013D;
+    &:hover{
+        border-color: #D90429;
+        background-color: #D90429;
+    }
 `
 export default function Form(props){
     const { register, formState: { errors }, handleSubmit, resetField } = useForm();
